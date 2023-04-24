@@ -1,0 +1,25 @@
+:root{
+  --uni_width : 90%;
+  --uni_padding : 0 5%;
+}
+
+.head_nav{
+  width: var(--uni_width);
+  padding: var(--uni_padding);
+  min-height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.head_nav div{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.head_nav div #add{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+}
