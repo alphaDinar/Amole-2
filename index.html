@@ -165,6 +165,7 @@
   </section>
 
   <script src="js/price.js"></script>
+  
   <script>
     const head_nav_tag = document.getElementById('head_nav_tag') 
     const head_nav = document.querySelector('.head_nav')
@@ -183,6 +184,8 @@
       }
     }
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/anime.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
     var head_box_swiper_thumb = new Swiper('.head_box_swiper_thumb', {
@@ -212,6 +215,26 @@
         prevEl: '.head_box_swiper_prev',
       },
     });
+
+    head_box_swiper.el.onmouseover =()=>{
+      head_box_swiper.autoplay.stop()
+    }
+    head_box_swiper.el.onmouseleave =()=>{
+      head_box_swiper.autoplay.start()
+    }
+
+    head_box_swiper.on('slideNextTransitionStart', ()=>{
+      [...document.querySelector(".head_box_swiper .swiper-slide-active p").children].forEach((el,ei)=>{
+        anime({
+          targets: el,
+          translateY: [-50,5],
+          opacity: [0,1],
+          delay: eval(ei+1) * 400,
+          // easing: 'easeInOutQuad',
+          duration: 1000,
+        });
+      })
+    })
     
   </script>
 </body>
