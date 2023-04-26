@@ -11,13 +11,8 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/index.css">
-  <!--  -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
-    integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <!--  -->
   <title>Document</title>
 </head>
 
@@ -175,7 +170,7 @@
       <div class="intro_box_left">
         <strong>Welcome To A-Mole Hostels.</strong>
         <div>
-          <a href=""><i class="material-symbols-outlined">radio_button_checked</i> About</a>
+          <a href="about.html"><i class="material-symbols-outlined">radio_button_checked</i> About</a>
           <a href=""><i class="material-symbols-outlined">radio_button_checked</i> Extra Services</a>
           <a href=""><i class="material-symbols-outlined">radio_button_checked</i> + Add a Hostel</a>
         </div>
@@ -266,25 +261,17 @@
         height: 300px;
         background: black;
         margin-top: 1rem;
-        --mask: 
-    radial-gradient(20px at 25% 0,#0000 98%,#000) 50% 20px/80px 100% repeat-x,
-    radial-gradient(20px at 75% 50%,#000 99%,#0000 101%) top/80px 40px repeat-x;
-  -webkit-mask: var(--mask);
-          mask: var(--mask);
+        --mask:
+          radial-gradient(20px at 25% 0, #0000 98%, #000) 50% 20px/80px 100% repeat-x,
+          radial-gradient(20px at 75% 50%, #000 99%, #0000 101%) top/80px 40px repeat-x;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
       }
     </style>
   </section>
 
   <script src="js/price.js"></script>
-
-  <script>
-    const head_nav_tag = document.getElementById('head_nav_tag')
-    const head_nav = document.querySelector('.head_nav')
-
-    head_nav_tag.onclick = () => {
-      head_nav.classList.toggle('change')
-    }
-  </script>
+  <script src="js/nav.js"></script>
   <script>
     const form_in = document.querySelectorAll('form select')
     const form_out = document.querySelectorAll('form .input_field strong')

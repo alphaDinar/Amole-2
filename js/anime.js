@@ -1,7 +1,7 @@
 [...document.querySelector('.head_nav div').children].forEach((el, ei) => {
   anime({
     targets: el,
-    translateX: [-50, 5],
+    translateX: [-50, 0],
     opacity: [0, 1],
     delay: eval(ei + 1) * 100,
     // easing: 'easeInOutQuad',
@@ -19,7 +19,7 @@ const introBoxObserver = new IntersectionObserver((entries, observer) => {
           el.style.display = 'flex'
           anime({
             targets: el,
-            translateY: [30, 5],
+            translateY: [30, 0],
             opacity: [0, 1],
             delay: eval(ei + 1) * 200,
             easing: 'easeInOutQuad',
@@ -44,7 +44,7 @@ const galleryBoxObserver = new IntersectionObserver((entries, observer) => {
           el.style.display = 'flex'
           anime({
             targets: el,
-            translateX: [30, 5],
+            translateX: [30, 0],
             opacity: [0, 1],
             delay: eval(ei + 1) * 100,
             easing: 'easeInOutQuad',

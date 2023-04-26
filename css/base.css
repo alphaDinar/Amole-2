@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
 
 
+
 @font-face {
     font-family: 'DessauProDrei';
     src: url('DessauProDrei.woff') format('woff');
@@ -21,6 +22,10 @@
     font-family: 'Poppins', sans-serif;
     font-family: 'Plus Jakarta Sans', sans-serif;
     scroll-behavior: smooth;
+}
+:root {
+    --uni_width: 90%;
+    --uni_padding: 0 5%;
 }
 .page {
     position: relative;
