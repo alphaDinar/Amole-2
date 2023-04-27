@@ -29,3 +29,13 @@ const makePriceSlider = () => {
   }
 }
 makePriceSlider()
+
+
+const form_in = document.querySelectorAll('form select')
+    const form_out = document.querySelectorAll('form .input_field strong')
+
+    for (let i = 0; i < form_in.length; i++) {
+      form_in[i].onchange = () => {
+        form_out[i].innerHTML = form_in[i].value
+      }
+    }
