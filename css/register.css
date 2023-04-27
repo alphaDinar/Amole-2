@@ -1,7 +1,9 @@
 :root{
   --background_image : url(../images/room1.jpg);
 }
-
+.page{
+  background: #f4f7fa !important;
+}
 .head_nav{
   position: absolute !important;
   top: 0;
