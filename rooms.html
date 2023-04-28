@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/searchForm.css">
+  <link rel="stylesheet" href="css/rooms.css">
   <title>Document</title>
 </head>
 <body>
@@ -114,164 +115,7 @@
           <a href="">Get Now</a>
         </div>
       </div>
-
-        <style>
-          .extra .top_image{
-            width: 100%;
-            height: 245px;
-            border-radius: 5px;
-            background: palevioletred;
-            background-position: center;
-            background-size: cover;
-          }
-          .extra .low_image_box{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-          }
-          .extra .low_image{
-            width: 48%;
-            height: 150px;
-            border-radius: 5px;
-            background: skyblue;
-            background-position: center;
-            background-size: cover;
-          }
-        </style>
-      
-      
-      <style>
-        .room_li{
-          border-radius: 10px;
-          display: flex;
-          align-items: flex-start;
-          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-          height: auto !important;
-          /* background: black; */
-        }
-        @media all and (max-width:750px){
-          .room_li{
-            flex-direction: column;
-          }
-        }
-        .room{
-          width: 320px;
-          padding: 10px;
-          border-radius: 10px;
-          display: flex;
-          gap: 0.5rem;
-          flex-direction: column;       
-          transition: 0.3s ease;
-          align-items: flex-start;
-          position: relative;
-        }
-        .room p{
-          width: 100%;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          transition: 0.3s ease;
-        }
-        .room #bookmark{
-          position: absolute;
-          top: 10px;
-          right: 10px;
-        }
-        .room .image_box{
-          background-position: center;
-          background-size: cover;
-          width: 100%;
-          border-radius: 7px;
-          height: 250px;
-        }
-        .room a{
-          display: none;
-        }
-        .room_li.change .room .image_box{
-          display: none;
-          /* height: auto !important; */
-        }
-        .room_li.change .room .tag_box{
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0.3rem;
-        }
-        .room_li.change .room .tag_box div small{
-          display: flex;
-        }
-        .room_li.change .room p{
-          display: flex;
-        }
-        .room_li.change .room a{
-          display: flex;
-          background: palevioletred;
-          color: white;
-          padding: 6px;
-          border-radius: 3px;
-        }
-        .extra{  
-          display: flex;
-          width: 0;
-          gap: 0.5rem;
-          transition: 0.5s ease;
-          flex-direction: column;
-          align-items: center;
-        }
-        .extra div{
-          display: none;
-        }
-
-        .room_li.change .extra{
-          padding: 10px;
-          width: 320px;
-        }
-        .room_li.change .extra div{
-          display: flex;
-        }
-
-
-        .room strong{
-          font-weight: 400;
-          font-size: 1.6rem;
-        }
-        .room span{
-          display: flex;
-          gap: 0.3rem;
-          color: rgb(103, 103, 103);
-          align-items: center;
-        }
-        
-        .room .tag_box{
-          display: flex;
-          align-items: center;
-          color: salmon;
-        }
-        .room .tag_box div small{
-          display: none;
-        }
-      </style>
-
     </section>
-    <style>
-      .room_box{
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 15px;
-        width: 95%;
-        gap: 27.7px;
-      }
-      .room_box.change{
-        justify-content: space-around;
-      }
-      
-      @media all and (max-width:1300px){
-        .room_box{
-          justify-content: space-around;
-        }
-      }
-    </style>
   </section>
 
   <script>
@@ -293,7 +137,6 @@
         if(ro.classList.contains('change')){
           ro.classList.remove('change')
           room_box.classList.remove('change')
-          // room_box.classList.rem
         }else{
           document.querySelectorAll('.room_li').forEach(ro=>{
             ro.classList.remove('change')
@@ -303,19 +146,7 @@
         }
       }
     })
-
   </script>
-
   <script src="js/price.js"></script>
 </body>
 </html>
-
-
-<style>
-  .head_box{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-</style>
