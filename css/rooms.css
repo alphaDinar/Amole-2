@@ -52,7 +52,18 @@
   background-size: cover;
   width: 100%;
   border-radius: 7px;
-  height: 250px;
+  height: 230px;
+}
+.room .image_box span{
+  position: absolute;
+  padding: 3px;
+  bottom: 10px;
+  right: 5px;
+  color: salmon;
+  border-radius: 0 0 5px 0px;
+}
+.room #type{
+  display: none;
 }
 .room a{
   display: none;
@@ -72,6 +83,7 @@
   display: flex;
   align-items: center;
   color: salmon;
+  /* border: 1px solid black; */
 }
 .room .tag_box div small{
   display: none;
@@ -117,6 +129,11 @@
 }
 .room_li.change .room .tag_box div small{
   display: flex;
+}
+.room_li.change .room #type{
+  display: flex;
+  font-weight: 600;
+  border-bottom: 1px dotted darkgray;
 }
 .room_li.change .room p{
   display: flex;

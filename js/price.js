@@ -16,7 +16,6 @@ const makePriceSlider = () => {
       price_progress.style.left = `${(price_range_min.value * 100) / price_max}%`
     }
     price_num_min.innerHTML = (price_range_min.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    console.log((price_range_min.value * 100) / price_max)
   }
   price_range_max.oninput = () => {
     var diff = price_range_max.value - price_range_min.value
@@ -24,18 +23,9 @@ const makePriceSlider = () => {
       price_range_max.value = parseInt(price_range_min.value) + gap
     }
     price_progress.style.right = `${100 - ((price_range_max.value * 100) / price_max)}%`
-    console.log(100 - ((price_range_max.value * 100) / price_max))
     price_num_max.innerHTML = (price_range_max.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   }
 }
 makePriceSlider()
 
 
-const form_in = document.querySelectorAll('form select')
-    const form_out = document.querySelectorAll('form .input_field strong')
-
-    for (let i = 0; i < form_in.length; i++) {
-      form_in[i].onchange = () => {
-        form_out[i].innerHTML = form_in[i].value
-      }
-    }

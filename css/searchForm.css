@@ -178,7 +178,7 @@
     padding: 15px;
     /* top: -375px; */
     top: 0;
-    left: -232px;
+    left: -233px;
     gap: 0.5rem;
     border-radius: 0 0 10px 10px;
     border: none;
@@ -192,12 +192,9 @@
     display: flex;
     position: absolute;
     left: 100%;
-    /* top: 0; */
     height: 30px;
     width: 30px;
     color: white;
-    border-radius: 50%;
-    background: black;
     display: flex;
     align-items: center;
     justify-content: center;
