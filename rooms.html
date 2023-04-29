@@ -305,13 +305,14 @@
     }else if (params.type && !params.campus) {
       oneParams(params)
     }
-    else if (params.campus && params.type && !params.price_min) {
+    else if (params.campus && params.type) {
       twoParams(params)
-    }else if (params.campus && params.price_min && !params.type) {
-      console.log('campus and price')
-    }else if (params.type && params.price_min && !params.type) {
-      
     }
+    // else if (params.campus && params.price_min && !params.type) {
+    //   console.log('campus and price')
+    // }else if (params.type && params.price_min && !params.type) {
+      
+    // }
     animeRoom_li_2()
   }
 
