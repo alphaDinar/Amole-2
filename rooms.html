@@ -180,23 +180,14 @@
 
     for (var i = 0; i < 3; i++) {
       var roomLiClone = document.querySelectorAll('.room_li')[0].cloneNode(true)
-      // if(i+1 < 4){
-      //   roomLiClone.dataset.type = i+1 
-      // }
       room_box.appendChild(roomLiClone)
     }
     for (var i = 0; i < 5; i++) {
       var roomLiClone = document.querySelectorAll('.room_li')[1].cloneNode(true)
-      // if(i+1 < 4){
-      //   roomLiClone.dataset.type = i+1 
-      // }
       room_box.appendChild(roomLiClone)
     }
     for (var i = 0; i < 2; i++) {
       var roomLiClone = document.querySelectorAll('.room_li')[2].cloneNode(true)
-      // if(i+1 < 4){
-      //   roomLiClone.dataset.type = i+1 
-      // }
       room_box.appendChild(roomLiClone)
     }
 
@@ -300,6 +291,8 @@
   }
 
   const runSearch =(params)=>{
+    console.log(params)
+
     if(params.campus && !params.type){
       oneParams(params)
     }else if (params.type && !params.campus) {
@@ -308,11 +301,12 @@
     else if (params.campus && params.type) {
       twoParams(params)
     }
-    // else if (params.campus && params.price_min && !params.type) {
-    //   console.log('campus and price')
-    // }else if (params.type && params.price_min && !params.type) {
-      
-    // }
+    else if (params.price_min && !params.campus && !params.type) {
+      oneParams(params)
+    }
+    else if(params.campus && params.type && params.price_min){
+      twoParams(params)
+    }
     animeRoom_li_2()
   }
 
@@ -325,22 +319,34 @@
       room_lis.forEach(el=>{
         handleFilter_1(params.type.toLowerCase() , el.dataset.type.toLowerCase(), el)
       })
+    }else if(params.price_min && params.price_max){
+      room_lis.forEach(el=>{
+        handlePrice_1(params, el)
+      })
     }
   }
-  const handleFilter_1 =(param,el_data, el)=>{
-    if(param != el_data){
-      el.style.display = 'none'
-    }else{
-      el.style.display = 'flex'
-    }
-  }
-
+  
   const twoParams=(params)=>{
     if(params.campus && params.type){
       room_lis.forEach(el=>{
         handleFilter_1(params.campus.toLowerCase() , el.dataset.campus.toLowerCase(), el)
       })
       handleFilter_2(params)
+    }
+    if(params.campus && params.type && params.price_min){
+      room_lis.forEach(el=>{
+        handleFilter_1(params.campus.toLowerCase() , el.dataset.campus.toLowerCase(), el)
+      })
+      handleFilter_2(params)
+      handleFilter_3(params)
+    }
+  }
+
+  const handleFilter_1 =(param,el_data, el)=>{
+    if(param != el_data){
+      el.style.display = 'none'
+    }else{
+      el.style.display = 'flex'
     }
   }
 
@@ -354,6 +360,28 @@
     roomsLeft.forEach(el=>{
       handleFilter_1(params.type.toLowerCase() , el.dataset.type.toLowerCase(), el)
     })
+  }
+
+  const handleFilter_3=(params)=>{
+    roomsLeft = []
+    room_lis.forEach(el=>{
+      if(el.style.display === 'flex'){
+        roomsLeft.push(el)
+      }
+    })
+    roomsLeft.forEach(el=>{
+      handlePrice_1(params, el)
+    })
+  }
+
+
+  const handlePrice_1 =(params,el)=>{
+    var el_price = parseInt(el.dataset.price)
+    if(el_price > params.price_min && el_price < params.price_max){
+      el.style.display = 'flex'
+    }else{
+      el.style.display = 'none'
+    }
   }
 
 </script>
