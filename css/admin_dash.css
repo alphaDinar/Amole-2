@@ -39,7 +39,8 @@
   min-height: 95vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  gap: 1rem;
+  /* justify-content: space-around; */
 }
 
 .main_top {
